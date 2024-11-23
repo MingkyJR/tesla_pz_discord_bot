@@ -5,8 +5,11 @@ from discord.ext import commands
 import asyncio
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+
 
 #환경변수-----------------------------------------------------------------------------------------------------
+load_dotenv()
 # 디스코드 봇 토큰
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 VM_HOST = os.getenv('VM_HOST')
