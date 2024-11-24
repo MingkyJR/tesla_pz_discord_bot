@@ -4,6 +4,8 @@ import os
 from discord.ext import commands
 import asyncio
 import smtplib
+from datetime import datetime
+import pytz
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
@@ -67,6 +69,42 @@ async def hi(ctx):
 @bot.command()
 async def 엄준식(ctx):
     await ctx.send("엄준식은 살아있다")
+
+#류준선시간
+@bot.command()
+async def 류준선시간(ctx):
+    # 캘리포니아 시간 가져오기
+    california_tz = pytz.timezone("America/Los_Angeles")
+    california_time = datetime.now(california_tz).strftime("%Y년%m월%d일 %H시%M분")
+    
+    # 메시지 전송
+    await ctx.send(f"현재 류준선 시간은: {california_time} 입니다!")
+
+#최진형시간
+@bot.command()
+async def 최진형시간(ctx):
+    # 유타 주 시간 가져오기
+    utah_tz = pytz.timezone("America/Denver")  # 유타 주는 MST(산악 표준시)를 사용
+    now = datetime.now(utah_tz)
+
+    # 원하는 출력 형식으로 시간 포맷 변경
+    formatted_time = now.strftime("%Y년%m월%d일 %H시%M분")
+    
+    # 메시지 전송
+    await ctx.send(f"현재 최진형 시간은 {formatted_time} 입니다")
+
+#한국시간
+@bot.command()
+async def 한국시간(ctx):
+    # 한국 시간 가져오기
+    korea_tz = pytz.timezone("Asia/Seoul")  # 한국 표준시 (KST)
+    now = datetime.now(korea_tz)
+
+    # 원하는 출력 형식으로 시간 포맷 변경
+    formatted_time = now.strftime("%Y년%m월%d일 %H시%M분")
+    
+    # 메시지 전송
+    await ctx.send(f"현재 한국 시간은 {formatted_time} 입니다")
 
 #서버재시작
 @bot.command()
