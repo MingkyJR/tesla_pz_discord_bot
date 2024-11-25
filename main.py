@@ -6,6 +6,7 @@ import asyncio
 import smtplib
 from datetime import datetime
 import pytz
+import random
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
@@ -68,7 +69,17 @@ async def hi(ctx):
 #엄준식
 @bot.command()
 async def 엄준식(ctx):
-    await ctx.send("엄준식은 살아있다")
+    # 답변 리스트
+    responses = [
+        "엄준식은 살아있다",
+        "엄준식은 생사 불명이다"
+    ]
+    
+    # 랜덤으로 답변 선택
+    response = random.choice(responses)
+    
+    # 메시지 전송
+    await ctx.send(response)
 
 #류준선시간
 @bot.command()
