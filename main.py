@@ -65,6 +65,12 @@ async def on_ready():
 @bot.command()
 async def hi(ctx):
     await ctx.send("네 반갑습니다")
+    
+#패치노트
+@bot.command()
+async def 패치노트(ctx):
+    await ctx.send("[좀보이드 서버 관리 봇 버전 5.0 패치노트]")
+    await ctx.send('"이제 엄준식은 랜덤하게 생사가 결정됩니다!"')
 
 #엄준식
 @bot.command()
