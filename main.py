@@ -69,8 +69,8 @@ async def hi(ctx):
 #패치노트
 @bot.command()
 async def 패치노트(ctx):
-    await ctx.send("[좀보이드 서버 관리 봇 버전 5.0 패치노트]")
-    await ctx.send('"이제 엄준식은 랜덤하게 생사가 결정됩니다!"')
+    await ctx.send("[좀보이드 서버 관리 봇 버전 5.1 패치노트]")
+    await ctx.send('"권성빈전역까지남은시간 이 추가되었습니다. 서버접속정보 가 추가되었습니다."')
 
 #엄준식
 @bot.command()
@@ -110,6 +110,14 @@ async def 최진형시간(ctx):
     # 메시지 전송
     await ctx.send(f"현재 최진형 시간은 {formatted_time} 입니다")
 
+#권성빈전역까지남은시간
+@bot.command()
+async def 권성빈전역까지남은시간(ctx):
+    # 메시지 전송
+    await ctx.send("버그가 발생했습니다(Error code 404)")
+    await ctx.send("존재하지 않는 시간입니다")
+    await ctx.send("권성빈은 전역할 수 없습니다")
+
 #한국시간
 @bot.command()
 async def 한국시간(ctx):
@@ -122,6 +130,25 @@ async def 한국시간(ctx):
     
     # 메시지 전송
     await ctx.send(f"현재 한국 시간은 {formatted_time} 입니다")
+
+#서버 접속정보
+@bot.command()
+async def 서버접속정보(ctx):
+    multi_line_string = """
+    [서버 접속 정보]
+    - 서버 이름 : 아무거나
+    - IP : 34.84.168.168
+    - LAN IP : 공백
+    - 포트 : 16261 (기본)
+    - 서버 암호 : 12341234
+    - 서버 설명 : 맘대루
+    - 유저이름 : 아무거나
+    - 비밀번호 : 아무거나
+    - Use Steam Relay 체크
+
+    -> 저장 후 접속
+    """
+    await ctx.send(multi_line_string)
 
 #서버재시작
 @bot.command()
